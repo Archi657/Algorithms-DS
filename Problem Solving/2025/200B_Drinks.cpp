@@ -13,23 +13,21 @@ void init_code(){
 }
 
 void solve() {
-   int a,b,d,e;
-   cin >> a >> b >> d >> e ;
-   set<int> nums;
-   nums.insert(a+b);
-   nums.insert(d-b);
-   nums.insert(e-d);
-   if (nums.size()==1){
-      cout << '3' << '\n';
-   }else if (nums.size()==2){
-      cout << '2' << '\n';
-   }else {
-      cout << '1' << '\n';
+   int n; cin >> n;
+   list<int> drinks;
+   int aux;
+   for (int i = 0; i < n; ++i)
+   {
+      cin >> aux;
+      drinks.push_front(aux);
    }
+   cout << setprecision(10);
+   float result = accumulate(drinks.begin(), drinks.end(),0);
+   cout << result / drinks.size() ;
 }
-
+ 
 int main() {
    init_code();
    fast
-   tc 
+   solve();
 }
