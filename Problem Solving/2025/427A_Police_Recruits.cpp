@@ -13,12 +13,29 @@ void init_code(){
 }
 
 void solve() {
+	int n;
+	cin >> n ;
+	int police=0;
+	int crimes=0;
+	for (int i = 0; i < n; ++i)
+	{
+		int aux;
+		cin >> aux;
+		if(aux>=1){
+			police+=aux;
+		}
 
+		if(police<=0 && aux==-1){
+			crimes++;
+		}else if(police>0 && aux==-1 && police!=0){
+			police--;
+		}
+	}
+	cout << crimes;
 }
  
 int main() {
    init_code();
    fast
-   tc 
    solve();
 }
